@@ -1,0 +1,13 @@
+
+.nav-link{
+    text-decoration: none;
+}
+.form-control{
+    color:#F85E9F;
+}
+.container{
+    color:red !important;
+}
+.img-fluid{
+    width: 50%;
+}
