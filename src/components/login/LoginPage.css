@@ -166,6 +166,7 @@
   .social-icon{
     height: 46px;
     width: 46px;
+    background: none;
     border: 1px solid #333;
     margin: 0 0.45rem;
     display: flex;

@@ -1,6 +1,5 @@
-import { hover } from "@testing-library/user-event/dist/hover";
 import React from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "./Home.module.css";
 import travel from "./assest/travel.png";
 import travelto from "./assest/travelto.png";
@@ -12,7 +11,6 @@ import Destination from "./Destination";
 import Keyfeatures from "./Keyfeatures";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
-import { Login } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 
 // import {typed} from "./Font.js"
