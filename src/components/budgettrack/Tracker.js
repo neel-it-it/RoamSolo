@@ -1,6 +1,6 @@
 // FileName: Tracker.js
 
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 import AddTransaction from "./AddTransaction";
 import OverviewComponent from "./Overviewcomponent";
@@ -34,14 +34,6 @@ const TransactionDetails = styled.div`
   margin-bottom: 25px;
 `;
 
-const THeading = styled.div`
-  font-size: 30px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 20px;
-  color: #44e610;
-`;
-
 const ExpenseBox = styled.div`
   flex: 1;
   border: 1px solid #000;
@@ -65,13 +57,7 @@ const Tracker = () => {
   const [income, setIncome] = useState(0);
 
   const AddTransactions = async (payload) => {
-  
-      const transactionArray = [...transactions, payload];
-      setTransactions( () => {
-      calculateTransactions([...transactionArray]);
-          return [...transactionArray]
-      }
-    );
+    setTransactions((prev) => [...prev, payload]);
   };
 
   const removeTransaction = (id) => {
@@ -81,11 +67,11 @@ const Tracker = () => {
     setTransactions(updatedTransactions);
   };
 
-  const calculateTransactions = (array) => {
+  const calculateTransactions = useCallback((array) => {
     let exp = 0;
     let inc = 0;
 
-    array?.map((item) => {
+    array?.forEach((item) => {
       item.transType === "expense"
         ? (exp = exp + item.amount)
         : (inc = inc + item.amount);
@@ -93,15 +79,11 @@ const Tracker = () => {
 
     setExpense(exp);
     setIncome(inc);
-  };
+  }, []);
 
-  useEffect(
-    () => {
-      calculateTransactions();
-    },
-    <hr color="red" />,
-    [transactions]
-  );
+  useEffect(() => {
+    calculateTransactions(transactions);
+  }, [transactions, calculateTransactions]);
 
   return (
     <Container>

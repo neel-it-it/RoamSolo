@@ -1,10 +1,5 @@
 import * as React from 'react';
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-import abtt from "./assest/abtt.jpg"
 import trav1 from "./assest/trav1.jpg"
-import trav2 from "./assest/trav2.jpg"
-import trav3 from "./assest/trav3.jpg"
 import trav4 from "./assest/trav4.jpg"
 import aboutperson from "./assest/aboutperson.jpg" 
 import trav5 from './assest/trav5.jpg'

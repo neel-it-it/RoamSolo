@@ -2,13 +2,10 @@ import React, { useState } from "react";
  //import backlogin from "./backlogin.jpeg";
 // import destination from "./destination.gif";
 import  "./LoginPage.css";
-import Inputcontrol from "../Inputcontrol";
 import { Link, useNavigate } from 'react-router-dom';
 import { FaUserShield } from "react-icons/fa";
 import { BsFillShieldLockFill } from "react-icons/bs";
-import { AiOutlineSwapRight } from "react-icons/ai";
 import { FaGoogle } from "react-icons/fa";
-import tranform from '../assest/tranform.png'
 import logo from '../assest/logo.png'
 
 
@@ -76,9 +73,9 @@ const cirular = () =>{
                 <p>Don't Have an account <span><Link style={{textDecoration:"none"}} to="/Signup">Sign Up</Link></span></p>
                 <p className="social-text">Or sign in with social platform</p>
                 <div className="social-media">
-                  <a href="" className="social-icon">
+                  <button type="button" className="social-icon">
                   <FaGoogle/>
-                  </a>
+                  </button>
                 </div>
               </form>
             </div>
